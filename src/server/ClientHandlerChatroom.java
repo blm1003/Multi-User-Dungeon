@@ -1,12 +1,10 @@
 package server;
 
-import client.ClientMain;
 import common.Constants;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
 import java.net.Socket;
 
 /**
@@ -71,32 +69,42 @@ public class ClientHandlerChatroom extends Thread
     public void run ()
     {
         System.out.println("Chatroom Handler Online for " + username);
-        server.getUser(username).printMessage("Welcome to " + chatroom + "!");
+        server.getUser(username).printMessage("Welcome to " + chatroom + "!" +
+                "\nType '?' for help.");
         while (userOnline)
         {
             try
             {
                 String clientCommand = clientReader.readLine();
-                if (clientCommand.substring(0, 1).equals("@"))
+                if (String.valueOf(clientCommand.charAt(0)).equals("@"))
                 {
                     //Send @ Mention
                 }
-                else if (clientCommand.equals("exit"))
+                else if (String.valueOf(clientCommand.charAt(0)).equals("~"))
                 {
-                    //Disconnect
+                    //Anonymous message to room
                 }
                 else if (clientCommand.substring(0, 1).equals("?"))
                 {
                     //Help
+                    getHelp();
+                }
+                else if (clientCommand.equals("exit"))
+                {
+                    //Disconnect
+                    System.out.println(username + " has disconnected.");
+                    server.disconnectUser(username, chatroom);
+                    break;
                 }
                 else
                 {
+                    //General Message
                     System.out.println(username + " sent a message to " +
                             chatroom + ": \n>> " + clientCommand);
                     sendToChatroom(
                             ServerMessages.
                                     formatSendMessageToUser(
-                                            clientCommand));
+                                            clientCommand, username));
                 }
             }
             catch (IOException ioe)
@@ -108,9 +116,31 @@ public class ClientHandlerChatroom extends Thread
         System.out.println("Chatroom Handler Offline for " + username);
     }
 
+    /**
+     * Sends a message to
+     * everyone in a specified
+     * chatroom. This message
+     * is formatted in ServerMessages.java
+     * @param message Message being sent
+     */
     public void sendToChatroom (String message)
     {
         server.getRoom(chatroom).post(message);
+    }
+
+    /**
+     * Sends a help menu to the user
+     * requesting it.
+     */
+    public void getHelp ()
+    {
+        System.out.println(username + " requested the help menu.");
+        server.getUser(username).printMessage(
+                "Help:\n" +
+                        "'@' + message: sends a direct message at another user.\n" +
+                        "'~' + message: sends an anonymous message in the room.\n" +
+                        "'?': Brings up this help menu.\n" +
+                        "'exit': Disconnects from the server.");
     }
 
 }

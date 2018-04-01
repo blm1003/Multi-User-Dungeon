@@ -66,6 +66,11 @@ public class ClientOut extends Thread
             {
                 clientInput = clientIn.readLine();
                 printToServer.println(clientInput);
+                if (clientInput.equals("exit"))
+                {
+                    client.disconnect();
+                    System.exit(0);
+                }
             }
             catch (IOException ioe)
             {

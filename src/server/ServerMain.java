@@ -164,4 +164,18 @@ public class ServerMain
     {
         return chatrooms.get(room);
     }
+
+    /**
+     * Removes the user from the
+     * collection of online users, and
+     * @param username User
+     *                 being disconnected.
+     * @param chatroom User is
+     *                 currently connected to.
+     */
+    public void disconnectUser (String username, String chatroom)
+    {
+        users.remove(username);
+        this.getRoom(chatroom).removeUser(username);
+    }
 }

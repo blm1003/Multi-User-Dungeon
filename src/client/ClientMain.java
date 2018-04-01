@@ -60,5 +60,4 @@ public class ClientMain
     {
         this.isActive = false;
     }
-
 }

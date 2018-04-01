@@ -108,4 +108,9 @@ public class Chatroom
         }
     }
 
+    public void removeUser (String username)
+    {
+        usersInRoom.remove(username);
+    }
+
 }
