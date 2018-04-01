@@ -41,14 +41,13 @@ public class ClientHandlerLogin extends Thread
         this.server = server;
 
         // Initialize the Streams
-
         try
         {
             //Once the User Object is created, the threads will not have to
             //have the printer information. This is only used in the login class.
-            clientPrinter = new PrintStream(client.getOutputStream());
+            this.clientPrinter = new PrintStream(client.getOutputStream());
 
-            clientReader = new BufferedReader(new
+            this.clientReader = new BufferedReader(new
                     InputStreamReader(client.getInputStream()));
         }
         catch (IOException ioe)
@@ -56,38 +55,42 @@ public class ClientHandlerLogin extends Thread
             System.out.println(Constants.IN_OUT_TO_CLIENT_INIT_ERROR_MESSAGE);
             System.exit(Constants.IN_OUT_TO_CLIENT_INIT_EXIT_CODE);
         }
-
     }
 
     public void run ()
     {
-        System.out.println("Login Thread Online for user on port " + client.getPort());
-        clientPrinter.println("Welcome! \nWhat is your name?");
-        String userName;
+        System.out.println("Login Handler Online.");
+        clientPrinter.println("Welcome!");
+        String username;
         while (true)
         {
+            clientPrinter.println("Enter A username:");
+            String tempName;
             try
             {
-                userName = clientReader.readLine();
+                tempName = clientReader.readLine();
             }
             catch (IOException ioe)
             {
                 System.out.println(
-                        Constants.READ_CLIENT_STREAM_ERROR_MESSAGE
-                                + " Defaulting username to 'Unknown'.");
-                userName = "Unknown";
+                        Constants.READ_CLIENT_STREAM_ERROR_MESSAGE);
+                tempName = "";
             }
-            if (server.isUsernameTaken(userName))
+
+            if (!server.isUsernameTaken(tempName))
             {
-                System.out.println("User on port " + client.getPort() +
-                        " tried username " + userName + ". Requesting again.");
-                clientPrinter.println("The name " + userName +
-                        " is currently in use. Try again.");
+                clientPrinter.println("Your username is now set as " + tempName + ".");
+                username = tempName;
+                server.addUser(username, client);
+                break;
             }
-            this.server.addUser(userName, this.client);
-            System.out.println("Shutting down login thread for user " +
-                    userName + ". Starting ChooseRoom Thread.");
-            new ClientHandlerChooseRoom(userName, client, server).start();
+            else
+            {
+                clientPrinter.println("This username is already taken," +
+                        " or is invalid.");
+            }
         }
+        System.out.println("Login Handler Offline");
+        new ClientHandlerChooseRoom(client, server, username).start();
     }
 }

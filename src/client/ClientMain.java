@@ -7,24 +7,58 @@ import java.net.Socket;
 
 public class ClientMain
 {
-    public static void main (String[] args)
+
+    private String username;
+    private Socket serverInfo;
+
+    private boolean isActive;
+
+    public ClientMain ()
     {
-        if (args.length != 0)
-        {
-            System.out.println(
-                    Constants.INCORRECT_CLIENT_USAGE_ERROR_MESSAGE);
-            System.exit(Constants.INCORRECT_CLIENT_USAGE_EXIT_CODE);
-        }
+        this.username = "DEFAULT";
+        this.isActive = true;
+    }
+
+    public void startClient ()
+    {
         try
         {
-            Socket clientSocket = new Socket(
+            this.serverInfo = new Socket(
                     "localhost", Constants.SERVER_PORT);
-            new ClientPrinter(clientSocket).start();
-            new ClientReceiver(clientSocket).start();
+            new ClientIn(serverInfo, this).start();
+            new ClientOut(serverInfo, this).start();
         }
         catch (IOException ioe)
         {
-
+            ioe.printStackTrace();
+            System.exit(0);
         }
     }
+
+    public static void main (String[] args)
+    {
+        ClientMain client = new ClientMain();
+        client.startClient();
+    }
+
+    public void setUsername (String name)
+    {
+        this.username = name;
+    }
+
+    public String getUsername ()
+    {
+        return this.username;
+    }
+
+    public boolean online ()
+    {
+        return isActive;
+    }
+
+    public void disconnect ()
+    {
+        this.isActive = false;
+    }
+
 }

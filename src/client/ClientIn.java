@@ -5,13 +5,19 @@ import common.Constants;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
 import java.net.Socket;
 
-public class ClientReceiver extends Thread
+/**
+ * Takes information
+ * from the server and
+ * acts on it.
+ * @author Anna Murphy
+ */
+public class ClientIn extends Thread
 {
 
     private Socket server;
+    private ClientMain client;
 
     private BufferedReader receiveFromServer;
 
@@ -21,10 +27,11 @@ public class ClientReceiver extends Thread
      * gets server commands.
      * @param server
      */
-    public ClientReceiver(Socket server)
+    public ClientIn(Socket server, ClientMain client)
     {
         this.server = server;
-        //Create Print Stream
+        this.client = client;
+
         try
         {
             receiveFromServer = new BufferedReader(
@@ -45,9 +52,19 @@ public class ClientReceiver extends Thread
      */
     public void run ()
     {
-        while (true)
+        while (client.online())
         {
-
+            String serverCommand;
+            try
+            {
+                serverCommand = receiveFromServer.readLine();
+                this.printMessage(serverCommand);
+            }
+            catch (IOException ioe)
+            {
+                System.out.println(
+                        Constants.READ_SERVER_STREAM_ERROR_MESSAGE);
+            }
         }
     }
 
@@ -57,9 +74,10 @@ public class ClientReceiver extends Thread
      * being used.
      * @param message message being sent.
      */
-    public void sendMessage (String message)
+    public void printMessage (String message)
     {
-
+        //Format the message
+        //Print the message
+        System.out.println(message);
     }
-
 }

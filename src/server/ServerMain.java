@@ -7,8 +7,8 @@ import common.User;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.sql.SQLOutput;
 import java.util.Hashtable;
+import java.util.Set;
 
 public class ServerMain
 {
@@ -88,6 +88,21 @@ public class ServerMain
         users.put(username, new User(username, client));
     }
 
+    public User getUser (String username)
+    {
+        return this.users.get(username);
+    }
+
+    /**
+     * Method that sends a message
+     * to a specific user. Message is
+     * raw text going in, and is formatted
+     * in this method.
+     * @param username user getting
+     *                 the message.
+     * @param message message being
+     *                sent.
+     */
     public void sendMessageToUser (String username, String message)
     {
         String newMessage = ServerMessages.
@@ -95,4 +110,58 @@ public class ServerMain
         users.get(username).printMessage(newMessage);
     }
 
+    /**
+     * Method that iterates through all
+     * open chatrooms and returns a string
+     * of all of them.
+     * @return fake list of rooms
+     */
+    public String getRooms ()
+    {
+        String roomsList = "";
+        Set<String> rooms = chatrooms.keySet();
+        for (String room : rooms)
+        {
+            roomsList += room + "\n";
+        }
+        return roomsList;
+    }
+
+    /**
+     * Tests to see if there is
+     * already a room under
+     * a name.
+     * @param name of the
+     *             potential room
+     * @return true/false
+     */
+    public boolean doesRoomExist (String name)
+    {
+        return chatrooms.containsKey(name);
+    }
+
+    /**
+     * Creates a new room and
+     * puts it in the collection of
+     * rooms.
+     * @param server The instance of
+     *               ServerMain
+     * @param roomName Name of the
+     *                 room
+     */
+    public void openRoom (ServerMain server, String roomName)
+    {
+        this.chatrooms.put(roomName, new Chatroom(server, roomName));
+    }
+
+    /**
+     * Returns a Chatroom with the name
+     * of the passed in string.
+     * @param room name of the room
+     * @return room in question.
+     */
+    public Chatroom getRoom (String room)
+    {
+        return chatrooms.get(room);
+    }
 }
