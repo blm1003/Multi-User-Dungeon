@@ -37,4 +37,7 @@ public class Constants
     public static final String USER_IN_ERROR_MESSAGE =
             "Error getting user input. Continuing Execution. ";
 
+    public static String APP_NAME =
+            "Multi User Dungeon: Client App";
+
 }
