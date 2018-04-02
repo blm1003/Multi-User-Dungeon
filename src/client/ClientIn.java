@@ -78,6 +78,7 @@ public class ClientIn extends Thread
     {
         //Format the message
         //Print the message
+
         System.out.println(message);
     }
 }

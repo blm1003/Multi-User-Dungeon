@@ -1,5 +1,6 @@
 package client.view;
 
+import client.ClientMain;
 import common.Constants;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -66,6 +67,7 @@ public class UserInterface extends Application
 
     public static void main (String[] args)
     {
+        //new ClientMainThread().start(); //This is super janky, but it should technically work?
         Application.launch(args);
     }
 }

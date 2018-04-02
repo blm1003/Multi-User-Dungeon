@@ -177,5 +177,9 @@ public class ServerMain
     {
         users.remove(username);
         this.getRoom(chatroom).removeUser(username);
+        if (this.getRoom(chatroom).isEmpty())
+        {
+            this.chatrooms.remove(chatroom);
+        }
     }
 }

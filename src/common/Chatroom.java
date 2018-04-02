@@ -113,4 +113,19 @@ public class Chatroom
         usersInRoom.remove(username);
     }
 
+    /**
+     * Calls the method isEmpty
+     * on the hashtable of users.
+     * @return Boolean
+     */
+    public boolean isEmpty ()
+    {
+        return this.usersInRoom.isEmpty();
+    }
+
+    public boolean hasUser (String name)
+    {
+        return this.usersInRoom.containsKey(name);
+    }
+
 }

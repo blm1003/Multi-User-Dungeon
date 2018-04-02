@@ -76,15 +76,48 @@ public class ClientHandlerChatroom extends Thread
             try
             {
                 String clientCommand = clientReader.readLine();
-                if (String.valueOf(clientCommand.charAt(0)).equals("@"))
+                if (clientCommand.equals("")) {}
+                else if (String.valueOf(clientCommand.charAt(0)).equals("@"))
                 {
                     //Send @ Mention
+                    String name = clientCommand.substring(1).split(" ")[0];
+                    String newMessage = clientCommand.substring(name.length() + 1);
+                    System.out.println("User " + username +
+                            " is sending @-ing user " + name + ". \n>>" +
+                            newMessage);
+                    if (server.getRoom(chatroom).hasUser(name))
+                    {
+                        //Print to Recipient
+                        server.getUser(name).printMessage(
+                                ServerMessages.formatSendMessageToUser(
+                                        newMessage,
+                                        username,
+                                        name));
+                        //Print to Sender
+                        server.getUser(username).printMessage(
+                                ServerMessages.formatSendMessageToUser(
+                                        newMessage,
+                                        username,
+                                        name));
+                    }
+                    else
+                    {
+                        server.getUser(username).printMessage("ERROR: User " + name + " is unavailable.");
+                        System.out.println("Error in sending @ message to user " + name + ". Aborted.");
+                    }
                 }
                 else if (String.valueOf(clientCommand.charAt(0)).equals("~"))
                 {
                     //Anonymous message to room
+                    String newMessage = clientCommand.substring(1);
+                    server.getRoom(chatroom).post(
+                            ServerMessages.formatSendMessageToUser(
+                                    newMessage, "Anonymous"));
+                    System.out.println("User " + username +
+                            " is sending an anonymous message.\n>>" +
+                            newMessage );
                 }
-                else if (clientCommand.substring(0, 1).equals("?"))
+                else if (String.valueOf(clientCommand.charAt(0)).equals("?"))
                 {
                     //Help
                     getHelp();
