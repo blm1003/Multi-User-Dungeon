@@ -1,5 +1,6 @@
 package server;
 
+import bots.Bot;
 import common.Chatroom;
 import common.Constants;
 import common.User;
