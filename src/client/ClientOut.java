@@ -62,9 +62,9 @@ public class ClientOut extends Thread
         String clientInput;
         while (client.online())
         {
-            try
+            clientInput = client.getUserIn();
+            if (clientInput != null && !clientInput.equals("") && !clientInput.equals("\n"))
             {
-                clientInput = clientIn.readLine();
                 printToServer.println(clientInput);
                 if (clientInput.equals("exit"))
                 {
@@ -72,11 +72,18 @@ public class ClientOut extends Thread
                     System.exit(0);
                 }
             }
-            catch (IOException ioe)
-            {
-                System.out.println(
-                        Constants.READ_CLIENT_INPUT_ERROR_MESSAGE);
-            }
         }
     }
+
+    /**
+     * clientIn needs to be changed from a stream
+     * to a queue. The textArea in UserInterface.java
+     * needs to be given an event handler to make it so
+     * that whenever enter is pressed, it adds a string to
+     * the queue.
+     *
+     * This queue will probably be in ClientMain, allowing access
+     * to it by objects in both this class and ClientMain.
+     */
+
 }

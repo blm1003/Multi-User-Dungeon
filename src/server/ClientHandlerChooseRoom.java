@@ -86,15 +86,20 @@ public class ClientHandlerChooseRoom extends ClientHandlerLogin
                 {
                     clientPrinter.println(room + " is not an open room currently. Create it? [Y/N]");
                     String clientResponse = clientReader.readLine();
-                    if (clientResponse.toLowerCase().substring(0, 1).equals("y"))
+                    System.out.println("User Response for " + username + ": " + clientResponse);
+                    try
                     {
-                        System.out.println("User " + username + " has opened room " + room);
-                        System.out.println("User " + username + " has entered room " + room);
-                        server.openRoom(server, room);
-                        server.getRoom(room).addUserToRoom(username);
-                        clientPrinter.println("Entering room " + room + "...");
-                        break;
+                        if (String.valueOf(clientResponse.charAt(0)).equals("y"))
+                        {
+                            System.out.println("User " + username + " has opened room " + room);
+                            System.out.println("User " + username + " has entered room " + room);
+                            server.openRoom(server, room);
+                            server.getRoom(room).addUserToRoom(username);
+                            clientPrinter.println("Entering room " + room + "...");
+                            break;
+                        }
                     }
+                    catch (StringIndexOutOfBoundsException sioobe) {}
                 }
             } catch (IOException ioe)
             {

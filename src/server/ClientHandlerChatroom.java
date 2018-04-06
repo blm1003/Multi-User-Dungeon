@@ -88,7 +88,6 @@ public class ClientHandlerChatroom extends Thread
                         System.out.println("User " + username +
                                 " sent a bot command to bot " + name + ". \n>>" +
                                 botCmd);
-                        //notifyAll();
                     }
                     else
                     {
