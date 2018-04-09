@@ -28,8 +28,20 @@ public class Dungeon extends Bot
         super(server, chatroom);
         this.startupMessage = "You and your party enter a dungeon. " +
                 "Who knows what horrors await...";
+        this.endMessage = "Congratulations!";
         this.nextType = RoomTypes.Entrance;
         this.vistedRooms = new HashSet<>();
+    }
+
+    /**
+     * Called from the terminus.
+     * The message changes to either be happy
+     * with treasure or sad with TPK.
+     * @param message new endmessage content.
+     */
+    public void setEndMessage (String message)
+    {
+        this.endMessage = message;
     }
 
     /**

@@ -28,6 +28,7 @@ public abstract class Bot extends Thread
     private ServerMain server;
     private String chatroom;
     protected String startupMessage;
+    protected String endMessage;
 
     /**
      * Constructor
@@ -39,6 +40,7 @@ public abstract class Bot extends Thread
         this.server = server;
         this.chatroom = chatroom;
         this.startupMessage = this + " has started!";
+        this.endMessage = this + " is shutting down.";
     }
 
     /**
@@ -69,6 +71,8 @@ public abstract class Bot extends Thread
         {
             this.execute();
         }
+        System.out.println("Bot " + this + " finished process..");
+        postToRoom(endMessage);
     }
 
     /**

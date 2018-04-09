@@ -62,6 +62,14 @@ public abstract class DungeonRoom
         this.dungeon = dungeon;
         this.options = new HashMap<>();
         this.visitCount = new HashMap<>();
+        this.visitCount.put(RoomTypes.Hallway, 0);
+        this.visitCount.put(RoomTypes.Entrance, 0);
+        this.visitCount.put(RoomTypes.TrapRoom, 0);
+        this.visitCount.put(RoomTypes.PuzzleRoom, 0);
+        this.visitCount.put(RoomTypes.TotalPartyKill, 0);
+        this.visitCount.put(RoomTypes.BossRoom, 0);
+        this.visitCount.put(RoomTypes.TreasureRoom, 0);
+
         //Choose What File To Use
         String dirToFolder;
         switch (roomType)
@@ -90,7 +98,7 @@ public abstract class DungeonRoom
         }
         String filePath = new File("").getAbsolutePath();
         filePath = filePath + "\\roomFiles\\" + dirToFolder;
-        System.out.println("File " + filePath);
+        //System.out.println("File " + filePath);
         File dir = new File (filePath);
         File[] files = dir.listFiles();
         Random rand = new Random();
@@ -121,6 +129,8 @@ public abstract class DungeonRoom
                 else
                 {
                     this.dungeon.addVisted(file.getAbsolutePath());
+                    int count = this.visitCount.get(roomType) + 1;
+                    this.visitCount.replace(roomType, count);
                     break;
                 }
             }
@@ -142,7 +152,7 @@ public abstract class DungeonRoom
                     break;
                 }
                 String[] lineSplit = lineContent.split("::");
-                System.out.println("Line Content " + lineContent);
+                //System.out.println("Line Content " + lineContent);
                 String userText = lineSplit[0];
                 String roomText = lineSplit[1];
                 RoomTypes types;

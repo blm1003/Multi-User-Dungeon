@@ -8,5 +8,7 @@ public class Treausre extends DungeonRoom
     {
         super(RoomTypes.TreasureRoom, dungeon);
         this.terminus = true;
+        dungeon.setEndMessage("You can now celebrate a successful dungeon raid" +
+                " with your team.");
     }
 }
