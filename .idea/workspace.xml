@@ -42,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Darkness" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/roomFiles/Hallway/Darkness">
+      <file leaf-file-name="DarkHall" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/roomFiles/Hallway/DarkHall">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+            <state relative-caret-position="215">
+              <caret line="5" column="126" lean-forward="false" selection-start-line="5" selection-start-column="126" selection-end-line="5" selection-end-column="126" />
               <folding />
             </state>
           </provider>
@@ -82,7 +82,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dungeon.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Dungeon.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bots/Dungeon.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="946">
@@ -156,9 +156,10 @@
         <option value="$PROJECT_DIR$/src/bots/dungeon/roomFiles/Entrance/Entrance1" />
         <option value="$PROJECT_DIR$/src/bots/Echo.java" />
         <option value="$PROJECT_DIR$/src/bots/dungeon/DungeonRoom.java" />
-        <option value="$PROJECT_DIR$/roomFiles/Hallway/Darkness" />
         <option value="$PROJECT_DIR$/src/bots/Bot.java" />
         <option value="$PROJECT_DIR$/src/bots/Dungeon.java" />
+        <option value="$PROJECT_DIR$/roomFiles/Hallway/Darkness" />
+        <option value="$PROJECT_DIR$/roomFiles/Hallway/DarkHall" />
       </list>
     </option>
   </component>
@@ -469,12 +470,12 @@
       <workItem from="1522866595719" duration="6066000" />
       <workItem from="1523246785792" duration="10065000" />
       <workItem from="1523297571055" duration="3236000" />
-      <workItem from="1523308346289" duration="924000" />
+      <workItem from="1523308346289" duration="1650000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28658000" />
+    <option name="totallyTimeSpent" value="29384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="97" y="-12" width="2651" height="1848" extended-state="6" />
@@ -959,14 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roomFiles/Hallway/Darkness">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bots/dungeon/DungeonRoom.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1118">
@@ -1000,6 +993,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roomFiles/Hallway/DarkHall">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="5" column="126" lean-forward="false" selection-start-line="5" selection-start-column="126" selection-end-line="5" selection-end-column="126" />
+          <folding />
         </state>
       </provider>
     </entry>
