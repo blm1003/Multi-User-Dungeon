@@ -69,16 +69,16 @@ public abstract class DungeonRoom
                 dirToFolder = "TotalPartyKill";
                 break;
             default:
-                dirToFolder = "";
+                dirToFolder = "Hallway";
                 break;
         }
         String filePath = new File("").getAbsolutePath();
-        filePath.concat("/" + dirToFolder);
+        filePath = filePath + "\\roomFiles\\" + dirToFolder;
+        System.out.println("File " + filePath);
         File dir = new File (filePath);
         File[] files = dir.listFiles();
         Random rand = new Random();
         File file = files[rand.nextInt(files.length)];
-        System.out.println("File " + file + " " + filePath);
 
         //Assign Variables Based On File Contents
         this.terminus = false;
@@ -96,7 +96,7 @@ public abstract class DungeonRoom
                     break;
                 }
                 String[] lineSplit = lineContent.split("::");
-                System.out.println("Line Content" + lineSplit[0]);
+                System.out.println("Line Content " + lineContent);
                 String userText = lineSplit[0];
                 String roomText = lineSplit[1];
                 RoomTypes types;

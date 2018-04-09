@@ -1,4 +1,4 @@
 The Dark Hall
 TEXT
-OPTION 1
-OPTION 2
+UserText::Result::Hallway
+UserText2::Result2::Boss

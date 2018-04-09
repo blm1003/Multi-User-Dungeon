@@ -1,5 +1,0 @@
-<<Room Name>>
-<<Opening text for the room>>
-<<Presented Text for Option 1>>::<<Option 1 Outro Text>>::<<Option 1 next room type>>
-<<Presented Text for Option 2>>::<<Option 2 Outro Text>>::<<Option 2 next room type>>
-.... Repeat until end of file.
