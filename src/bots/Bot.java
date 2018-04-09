@@ -80,7 +80,7 @@ public abstract class Bot extends Thread
      */
     public synchronized void addAction (String action)
     {
-        System.out.println(this + " received a new instruction.");
+        System.out.println(this + " received a new instruction. '" + action + "'");
         this.instructions.add(action);
     }
 

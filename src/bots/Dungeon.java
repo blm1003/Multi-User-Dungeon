@@ -91,6 +91,7 @@ public class Dungeon extends Bot
                 {
                     try
                     {
+                        instruction = instruction.substring(1);
                         int choice =  Integer.parseInt(instruction);
                         String postText = room.getOptionText(choice);
                         if (postText != null)
@@ -101,7 +102,7 @@ public class Dungeon extends Bot
                         }
                         else
                         {
-                            postToRoom("Invalid Choice. Choose again.");
+                            postToRoom("Choice Not Found. Choose again.");
                         }
                     }
                     catch (NumberFormatException nfe)
