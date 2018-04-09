@@ -1,9 +1,11 @@
 package bots.dungeon;
 
+import bots.Dungeon;
+
 public class BossRoom extends DungeonRoom
 {
-    public BossRoom ()
+    public BossRoom (Dungeon dungeon)
     {
-        super(RoomTypes.BossRoom);
+        super(RoomTypes.BossRoom, dungeon);
     }
 }

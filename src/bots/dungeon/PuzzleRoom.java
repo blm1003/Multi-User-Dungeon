@@ -1,9 +1,11 @@
 package bots.dungeon;
 
+import bots.Dungeon;
+
 public class PuzzleRoom extends DungeonRoom
 {
-    public PuzzleRoom ()
+    public PuzzleRoom (Dungeon dungeon)
     {
-        super (RoomTypes.PuzzleRoom);
+        super (RoomTypes.PuzzleRoom, dungeon);
     }
 }

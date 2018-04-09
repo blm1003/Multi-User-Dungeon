@@ -56,28 +56,28 @@ public class Dungeon extends Bot
         switch (nextType)
         {
             case Entrance:
-                room = new Entrance();
+                room = new Entrance(this);
                 break;
             case Hallway:
-                room = new Hallway();
+                room = new Hallway(this);
                 break;
             case PuzzleRoom:
-                room = new PuzzleRoom();
+                room = new PuzzleRoom(this);
                 break;
             case TrapRoom:
-                room = new TrapRoom();
+                room = new TrapRoom(this);
                 break;
             case BossRoom:
-                room = new BossRoom();
+                room = new BossRoom(this);
                 break;
             case TreasureRoom:
-                room = new Treausre();
+                room = new Treausre(this);
                 break;
             case TotalPartyKill:
-                room = new TotalPartyKill();
+                room = new TotalPartyKill(this);
                 break;
             default:
-                room = new Hallway();
+                room = new Hallway(this);
                 break;
         }
         postToRoom(room.getOpeningText());

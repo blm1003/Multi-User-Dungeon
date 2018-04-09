@@ -1,10 +1,12 @@
 package bots.dungeon;
 
+import bots.Dungeon;
+
 public class Treausre extends DungeonRoom
 {
-    public Treausre ()
+    public Treausre (Dungeon dungeon)
     {
-        super(RoomTypes.TreasureRoom);
+        super(RoomTypes.TreasureRoom, dungeon);
         this.terminus = true;
     }
 }

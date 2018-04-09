@@ -1,10 +1,12 @@
 package bots.dungeon;
 
+import bots.Dungeon;
+
 public class TotalPartyKill extends DungeonRoom
 {
-    public TotalPartyKill ()
+    public TotalPartyKill (Dungeon dungeon)
     {
-        super(RoomTypes.TotalPartyKill);
+        super(RoomTypes.TotalPartyKill, dungeon);
         this.terminus = true;
     }
 }

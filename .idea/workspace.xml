@@ -25,7 +25,7 @@
       <file leaf-file-name="DungeonRoom.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bots/dungeon/DungeonRoom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
+            <state relative-caret-position="-344">
               <caret line="125" column="9" lean-forward="true" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -42,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Hell" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Hell" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/roomFiles/TotalPartyKill/Hell">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="129">
-              <caret line="3" column="60" lean-forward="false" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+              <caret line="3" column="59" lean-forward="false" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -85,26 +85,27 @@
       <file leaf-file-name="Dungeon.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bots/Dungeon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="812">
-              <caret line="140" column="5" lean-forward="false" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
+            <state relative-caret-position="855">
+              <caret line="79" column="39" lean-forward="false" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3404#3405#0" expanded="true" />
-                <element signature="e#3462#3463#0" expanded="true" />
-                <element signature="e#3673#3674#0" expanded="true" />
-                <element signature="e#3719#3720#0" expanded="true" />
+                <element signature="e#3436#3437#0" expanded="true" />
+                <element signature="e#3494#3495#0" expanded="true" />
+                <element signature="e#3705#3706#0" expanded="true" />
+                <element signature="e#3751#3752#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Entrance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bots/dungeon/Entrance.java">
+      <file leaf-file-name="BossRoom.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/bots/dungeon/BossRoom.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="258">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
               <folding>
-                <element signature="e#135#136#0" expanded="true" />
+                <element signature="e#131#132#0" expanded="true" />
+                <element signature="e#181#182#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,23 +155,23 @@
         <option value="$PROJECT_DIR$/src/bots/dungeon/roomFiles/Hallway/Darkness" />
         <option value="$PROJECT_DIR$/src/bots/dungeon/Option.java" />
         <option value="$PROJECT_DIR$/src/bots/dungeon/RoomTypes.java" />
-        <option value="$PROJECT_DIR$/src/bots/dungeon/Entrance.java" />
-        <option value="$PROJECT_DIR$/src/bots/dungeon/Treausre.java" />
-        <option value="$PROJECT_DIR$/src/bots/dungeon/TotalPartyKill.java" />
-        <option value="$PROJECT_DIR$/src/bots/dungeon/BossRoom.java" />
-        <option value="$PROJECT_DIR$/src/bots/dungeon/TrapRoom.java" />
         <option value="$PROJECT_DIR$/src/bots/dungeon/Halway.java" />
-        <option value="$PROJECT_DIR$/src/bots/dungeon/Hallway.java" />
-        <option value="$PROJECT_DIR$/src/bots/dungeon/PuzzleRoom.java" />
         <option value="$PROJECT_DIR$/src/bots/dungeon/roomFiles/Entrance/Entrance1" />
         <option value="$PROJECT_DIR$/src/bots/Echo.java" />
         <option value="$PROJECT_DIR$/src/bots/Bot.java" />
         <option value="$PROJECT_DIR$/roomFiles/Hallway/Darkness" />
         <option value="$PROJECT_DIR$/roomFiles/Hallway/DarkHall" />
-        <option value="$PROJECT_DIR$/src/bots/Dungeon.java" />
         <option value="$PROJECT_DIR$/roomFiles/PreventTheLoop" />
         <option value="$PROJECT_DIR$/src/bots/dungeon/DungeonRoom.java" />
         <option value="$PROJECT_DIR$/roomFiles/TotalPartyKill/Hell" />
+        <option value="$PROJECT_DIR$/src/bots/dungeon/Entrance.java" />
+        <option value="$PROJECT_DIR$/src/bots/dungeon/Hallway.java" />
+        <option value="$PROJECT_DIR$/src/bots/dungeon/TotalPartyKill.java" />
+        <option value="$PROJECT_DIR$/src/bots/dungeon/PuzzleRoom.java" />
+        <option value="$PROJECT_DIR$/src/bots/Dungeon.java" />
+        <option value="$PROJECT_DIR$/src/bots/dungeon/Treausre.java" />
+        <option value="$PROJECT_DIR$/src/bots/dungeon/TrapRoom.java" />
+        <option value="$PROJECT_DIR$/src/bots/dungeon/BossRoom.java" />
       </list>
     </option>
   </component>
@@ -500,12 +501,12 @@
       <workItem from="1522866595719" duration="6066000" />
       <workItem from="1523246785792" duration="10065000" />
       <workItem from="1523297571055" duration="3236000" />
-      <workItem from="1523308346289" duration="3707000" />
+      <workItem from="1523308346289" duration="4156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31441000" />
+    <option name="totallyTimeSpent" value="31890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="97" y="-12" width="2651" height="1848" extended-state="6" />
@@ -631,10 +632,10 @@
           <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3404#3405#0" expanded="true" />
-            <element signature="e#3462#3463#0" expanded="true" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3719#3720#0" expanded="true" />
+            <element signature="e#3436#3437#0" expanded="true" />
+            <element signature="e#3494#3495#0" expanded="true" />
+            <element signature="e#3705#3706#0" expanded="true" />
+            <element signature="e#3751#3752#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -711,10 +712,10 @@
           <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3404#3405#0" expanded="true" />
-            <element signature="e#3462#3463#0" expanded="true" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3719#3720#0" expanded="true" />
+            <element signature="e#3436#3437#0" expanded="true" />
+            <element signature="e#3494#3495#0" expanded="true" />
+            <element signature="e#3705#3706#0" expanded="true" />
+            <element signature="e#3751#3752#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -871,66 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/Treausre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/TotalPartyKill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/BossRoom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding>
-            <element signature="e#94#95#0" expanded="false" />
-            <element signature="e#135#136#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/TrapRoom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding>
-            <element signature="e#94#95#0" expanded="false" />
-            <element signature="e#135#136#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/Hallway.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding>
-            <element signature="e#92#93#0" expanded="false" />
-            <element signature="e#132#133#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/PuzzleRoom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-          <folding>
-            <element signature="e#98#99#0" expanded="false" />
-            <element signature="e#142#143#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roomFiles/Examplar">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
@@ -944,16 +885,6 @@
         <state relative-caret-position="215">
           <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/Entrance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#135#136#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -997,20 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bots/Dungeon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="140" column="5" lean-forward="false" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3404#3405#0" expanded="true" />
-            <element signature="e#3462#3463#0" expanded="true" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3719#3720#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/roomFiles/PreventTheLoop">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -1019,9 +936,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/roomFiles/TotalPartyKill/Hell">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="3" column="59" lean-forward="false" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bots/dungeon/DungeonRoom.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
+        <state relative-caret-position="-344">
           <caret line="125" column="9" lean-forward="true" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1037,11 +962,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roomFiles/TotalPartyKill/Hell">
+    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/Entrance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="3" column="60" lean-forward="false" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+        <state relative-caret-position="344">
+          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+          <folding>
+            <element signature="e#131#132#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/Hallway.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/TotalPartyKill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/PuzzleRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <folding>
+            <element signature="e#135#136#0" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/Treausre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/TrapRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bots/Dungeon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="79" column="39" lean-forward="false" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3436#3437#0" expanded="true" />
+            <element signature="e#3494#3495#0" expanded="true" />
+            <element signature="e#3705#3706#0" expanded="true" />
+            <element signature="e#3751#3752#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bots/dungeon/BossRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding>
+            <element signature="e#131#132#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
