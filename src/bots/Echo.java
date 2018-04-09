@@ -12,8 +12,6 @@ import server.ServerMain;
 public class Echo extends Bot
 {
 
-    private String startupMessage;
-
     /**
      * Constructor
      */
@@ -40,19 +38,22 @@ public class Echo extends Bot
      * This is an echo bot.
      * The instruction, whatever it is, is
      * just echoed back at the user.
-     * @param instruction being executed.
      */
     @Override
-    public void execute(String instruction)
+    public void execute()
     {
-        System.out.println(this + " echoing string: " + instruction);
-        if (instruction.equals("stop"))
+        String instruction = getAction();
+        if (instruction != null)
         {
-            this.endBot();
-        }
-        else
-        {
-            postToRoom(instruction);
+            System.out.println(this + " echoing string: " + instruction);
+            if (instruction.equals("stop"))
+            {
+                this.endBot();
+            }
+            else
+            {
+                postToRoom(instruction);
+            }
         }
     }
 }

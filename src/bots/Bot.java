@@ -27,7 +27,7 @@ public abstract class Bot extends Thread
     private boolean runWhile;
     private ServerMain server;
     private String chatroom;
-    private String startupMessage;
+    protected String startupMessage;
 
     /**
      * Constructor
@@ -67,11 +67,7 @@ public abstract class Bot extends Thread
         postToRoom(startupMessage);
         while (runWhile)
         {
-            String i = getAction();
-            if (i != null)
-            {
-                this.execute(i);
-            }
+            this.execute();
         }
     }
 
@@ -115,9 +111,10 @@ public abstract class Bot extends Thread
      * The execution of each individual
      * instruction must be held within
      * each variation of the bot.
-     * @param instruction being executed.
+     *
+     *
      */
-    public abstract void execute (String instruction);
+    public abstract void execute ();
 
     /**
      * End the bot operation.
