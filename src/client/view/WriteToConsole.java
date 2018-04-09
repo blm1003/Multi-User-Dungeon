@@ -1,6 +1,7 @@
 package client.view;
 
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.VBox;
 
 
 /**
@@ -38,7 +39,8 @@ public class WriteToConsole
             @Override
             public void run() {
                 consoleText.setText(content);
-                output.setScrollTop(Double.MAX_VALUE);
+                consoleText.selectEnd();
+                consoleText.deselect();
             }
         });
     }
