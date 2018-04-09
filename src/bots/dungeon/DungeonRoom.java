@@ -1,5 +1,7 @@
 package bots.dungeon;
 
+import bots.Dungeon;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -35,6 +37,18 @@ public abstract class DungeonRoom
     protected HashMap <Integer, Option> options;
 
     /**
+     * Dungeon to which this room is  a part.
+     */
+    protected Dungeon dungeon;
+
+    /**
+     * Map used to prevent infinite loops in
+     * choosing rooms. If there are no rooms of
+     * a type left unvisited, it defaults to a boss.
+     */
+    protected HashMap<RoomTypes, Integer> visitCount;
+
+    /**
      * Constructor.
      * Reads from a file of the type
      * specified, and assigns class variables
@@ -43,9 +57,11 @@ public abstract class DungeonRoom
      *                 the type of the room
      *                 in the dungeon.
      */
-    public DungeonRoom (RoomTypes roomType)
+    public DungeonRoom (RoomTypes roomType, Dungeon dungeon)
     {
+        this.dungeon = dungeon;
         this.options = new HashMap<>();
+        this.visitCount = new HashMap<>();
         //Choose What File To Use
         String dirToFolder;
         switch (roomType)
@@ -79,6 +95,36 @@ public abstract class DungeonRoom
         File[] files = dir.listFiles();
         Random rand = new Random();
         File file = files[rand.nextInt(files.length)];
+
+        if (visitCount.get(roomType) == files.length)
+        {
+            /**
+             * Assuming you have visited all of the same type
+             * of room, let's take you to a special boss.
+             */
+            filePath = new File("").getAbsolutePath() +
+                    "\\roomFiles\\PreventTheLoop";
+            file = new File(filePath);
+        }
+        else
+        {
+            /**
+             * Re choose rooms randomly until you
+             * get one that you haven't seen before.
+             */
+            while (true)
+            {
+                if (this.dungeon.hasVisted(file.getAbsolutePath()))
+                {
+                    file = files[rand.nextInt(files.length)];
+                }
+                else
+                {
+                    this.dungeon.addVisted(file.getAbsolutePath());
+                    break;
+                }
+            }
+        }
 
         //Assign Variables Based On File Contents
         this.terminus = false;

@@ -3,6 +3,8 @@ package bots;
 import bots.dungeon.*;
 import server.ServerMain;
 
+import java.util.HashSet;
+
 /**
  * Specific bot extension
  * that creates a dungeon
@@ -16,6 +18,7 @@ public class Dungeon extends Bot
 
     private DungeonRoom room;
     private RoomTypes nextType;
+    private HashSet<String> vistedRooms;
 
     /**
      * Constructor
@@ -26,6 +29,7 @@ public class Dungeon extends Bot
         this.startupMessage = "You and your party enter a dungeon. " +
                 "Who knows what horrors await...";
         this.nextType = RoomTypes.Entrance;
+        this.vistedRooms = new HashSet<>();
     }
 
     /**
@@ -112,5 +116,27 @@ public class Dungeon extends Bot
                 }
             }
         }
+    }
+
+    /**
+     * Method to check if the room being tried has
+     * already been visited in this particular session.
+     * @param roomPath File path to the room in question.
+     * @return true or false if it is in the set.
+     */
+    public boolean hasVisted (String roomPath)
+    {
+        return this.vistedRooms.contains(roomPath);
+    }
+
+    /**
+     * Once a room has been visited,
+     * add it to the set.
+     * @param roomPath File path to the room in
+     *                 question.
+     */
+    public void addVisted (String roomPath)
+    {
+        this.vistedRooms.add(roomPath);
     }
 }
