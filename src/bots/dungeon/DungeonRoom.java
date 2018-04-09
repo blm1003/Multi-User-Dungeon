@@ -45,6 +45,7 @@ public abstract class DungeonRoom
      */
     public DungeonRoom (RoomTypes roomType)
     {
+        this.options = new HashMap<>();
         //Choose What File To Use
         String dirToFolder;
         switch (roomType)
@@ -77,6 +78,7 @@ public abstract class DungeonRoom
         File[] files = dir.listFiles();
         Random rand = new Random();
         File file = files[rand.nextInt(files.length)];
+        System.out.println("File " + file + " " + filePath);
 
         //Assign Variables Based On File Contents
         this.terminus = false;
@@ -94,6 +96,7 @@ public abstract class DungeonRoom
                     break;
                 }
                 String[] lineSplit = lineContent.split("::");
+                System.out.println("Line Content" + lineSplit[0]);
                 String userText = lineSplit[0];
                 String roomText = lineSplit[1];
                 RoomTypes types;
