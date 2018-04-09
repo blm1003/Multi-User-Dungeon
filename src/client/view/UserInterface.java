@@ -53,7 +53,8 @@ public class UserInterface extends Application
         output.setMinSize(200, 300);
         output.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE );
         output.setFont(Font.font("Monospace", 14));
-        output.setText(UIConstants.OUTPUT_TEST_STRING);
+        output.setText("");
+        //output.setText(UIConstants.OUTPUT_TEST_STRING);
         output.setWrapText(true);
 
         TextArea input = new TextArea();

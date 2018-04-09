@@ -125,6 +125,10 @@ public class ServerMain
         {
             roomsList += room + "\n";
         }
+        if (roomsList.equals(""))
+        {
+            roomsList = "No rooms open.";
+        }
         return roomsList;
     }
 
