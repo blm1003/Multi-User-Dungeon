@@ -62,6 +62,11 @@ public class ClientIn extends Thread
             try
             {
                 serverCommand = receiveFromServer.readLine();
+                if (serverCommand.startsWith("+|+"))
+                {
+                    serverCommand = serverCommand.substring(3);
+                    client.disconnect();
+                }
                 this.printMessage(serverCommand);
             }
             catch (IOException ioe)

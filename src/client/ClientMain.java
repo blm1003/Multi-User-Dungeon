@@ -33,7 +33,7 @@ public class ClientMain
         try
         {
             this.serverInfo = new Socket(
-                    "localhost", Constants.SERVER_PORT);
+                    "129.21.156.224", Constants.SERVER_PORT);
             new ClientIn(serverInfo, this, consoleWriter).start();
             new ClientOut(serverInfo, this).start();
         }
