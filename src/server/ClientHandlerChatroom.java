@@ -208,6 +208,7 @@ public class ClientHandlerChatroom extends Thread
                         "'@' + message: sends a direct message at another user.\n" +
                         "'~' + message: sends an anonymous message in the room.\n" +
                         "'?': Brings up this help menu.\n" +
+                        "'Bot' <NAME OF BOT> starts a Bot of that name. \n" +
                         "'exit': Disconnects from the server.");
     }
 

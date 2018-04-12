@@ -75,6 +75,7 @@ public class ClientHandlerLogin extends Thread
                 System.out.println(
                         Constants.READ_CLIENT_STREAM_ERROR_MESSAGE);
                 tempName = "";
+                this.stop();
             }
 
             if (!server.isUsernameTaken(tempName))

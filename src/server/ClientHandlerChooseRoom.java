@@ -104,6 +104,7 @@ public class ClientHandlerChooseRoom extends ClientHandlerLogin
             } catch (IOException ioe)
             {
                 System.out.println(Constants.READ_CLIENT_STREAM_ERROR_MESSAGE);
+                this.stop();
             }
         }
         System.out.println("Choose Room Handler Offline for " + username);

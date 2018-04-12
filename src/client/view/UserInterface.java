@@ -16,6 +16,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 /**
  * Graphical UserInterface
@@ -84,6 +85,13 @@ public class UserInterface extends Application
                     client.addUserIn(inputContents);
                     input.setText("");
                 }
+            }
+        });
+
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                client.disconnect();
             }
         });
 
