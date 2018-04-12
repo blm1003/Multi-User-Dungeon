@@ -1,6 +1,10 @@
 package common;
 
+import bots.Bot;
+import bots.Dungeon;
+import bots.Echo;
 import server.ServerMain;
+import server.ServerMessages;
 
 import java.util.Hashtable;
 import java.util.function.BiConsumer;
@@ -15,6 +19,7 @@ public class Chatroom
 {
     private String name;
     private Hashtable<String, User> usersInRoom;
+    private Hashtable <String, Bot> bots;
     private ServerMain server;
     private String password;
     private boolean isLocked;
@@ -30,6 +35,7 @@ public class Chatroom
     {
         this.name = roomName;
         this.usersInRoom = new Hashtable<>();
+        this.bots = new Hashtable<>();
         this.password = "";
         this.isLocked = false;
         this.hasMUD = false;
@@ -88,15 +94,6 @@ public class Chatroom
     }
 
     /**
-     * Starts the MUD bot in the chatroom
-     */
-    public void startMUD ()
-    {
-        this.hasMUD = true;
-        //TODO
-    }
-
-    /**
      * Post a message in the chat to all users.
      * @param message
      */
@@ -126,6 +123,66 @@ public class Chatroom
     public boolean hasUser (String name)
     {
         return this.usersInRoom.containsKey(name);
+    }
+
+    /**
+     * Method that starts
+     * a bot in a chatroom
+     * after a specific user
+     * command.
+     * @param botName of the
+     *                bot being started.
+     */
+    public boolean addBot (String botName)
+    {
+        boolean success = true;
+        Bot bot;
+        switch (botName)
+        {
+            case ("Dungeon"):
+                bot = new Dungeon(server, name);
+                bot.start();
+                break;
+            case ("Echo"):
+                bot = new Echo(server, name);
+                bot.start();
+                break;
+            default:
+                success = false;
+                bot = null;
+                break;
+        }
+        if (success)
+        {
+            this.bots.put(botName, bot);
+        }
+        return success;
+    }
+
+    /**
+     * Method to  check
+     * whether or not a given
+     * room has a bot of a given
+     * type.
+     * @param botName of the bot.
+     * @return true/false
+     */
+    public boolean hasBot (String botName)
+    {
+        return this.bots.containsKey(botName);
+    }
+
+    /**
+     * Adds an action to the
+     * bot's queue of actions.
+     * @param botName bot being
+     *                instructed.
+     * @param instruction to be carried
+     *                    out.
+     */
+    public void addInstruction (String botName, String instruction)
+    {
+        this.bots.get(botName).addAction(instruction);
     }
 
 }

@@ -38,6 +38,6 @@ public class Constants
             "Error getting user input. Continuing Execution. ";
 
     public static String APP_NAME =
-            "Multi User Dungeon: Client App";
+            "Multi User Bot: Client App";
 
 }

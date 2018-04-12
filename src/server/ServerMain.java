@@ -1,5 +1,6 @@
 package server;
 
+import bots.Bot;
 import common.Chatroom;
 import common.Constants;
 import common.User;
@@ -123,6 +124,10 @@ public class ServerMain
         for (String room : rooms)
         {
             roomsList += room + "\n";
+        }
+        if (roomsList.equals(""))
+        {
+            roomsList = "No rooms open.";
         }
         return roomsList;
     }

@@ -3,11 +3,17 @@ package client.view;
 import client.ClientMain;
 import common.Constants;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -47,7 +53,8 @@ public class UserInterface extends Application
         output.setMinSize(200, 300);
         output.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE );
         output.setFont(Font.font("Monospace", 14));
-        output.setText(UIConstants.OUTPUT_TEST_STRING);
+        output.setText("");
+        //output.setText(UIConstants.OUTPUT_TEST_STRING);
         output.setWrapText(true);
 
         TextArea input = new TextArea();
@@ -63,6 +70,24 @@ public class UserInterface extends Application
 
         stage.setScene(new Scene(content));
         stage.show();
+
+        //Make a ClientMain and Start it.
+
+        ClientMain client = new ClientMain(new WriteToConsole(output, input));
+
+        input.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if (event.getCode() == KeyCode.ENTER)
+                {
+                    String inputContents = input.getText();
+                    client.addUserIn(inputContents);
+                    input.setText("");
+                }
+            }
+        });
+
+        client.startClient();
     }
 
     public static void main (String[] args)

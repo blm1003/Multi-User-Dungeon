@@ -1,5 +1,6 @@
 package client;
 
+import client.view.WriteToConsole;
 import common.Constants;
 
 import java.io.BufferedReader;
@@ -21,16 +22,19 @@ public class ClientIn extends Thread
 
     private BufferedReader receiveFromServer;
 
+    private WriteToConsole consoleWriter;
+
     /**
      * Constructor
      * Creates an input stream that
      * gets server commands.
      * @param server
      */
-    public ClientIn(Socket server, ClientMain client)
+    public ClientIn(Socket server, ClientMain client, WriteToConsole consoleWriter)
     {
         this.server = server;
         this.client = client;
+        this.consoleWriter = consoleWriter;
 
         try
         {
@@ -80,5 +84,6 @@ public class ClientIn extends Thread
         //Print the message
 
         System.out.println(message);
+        consoleWriter.write(message);
     }
 }
