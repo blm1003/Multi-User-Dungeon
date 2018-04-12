@@ -51,6 +51,14 @@ public class User
     }
 
     /**
+     * Method to close the streams.
+     */
+    public void closeStreams ()
+    {
+        this.printToUser.close();
+    }
+
+    /**
      * Public method that prints a message
      * to this user.
      * @param message Text string formatted

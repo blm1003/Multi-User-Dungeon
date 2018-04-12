@@ -25,8 +25,8 @@ public abstract class Bot extends Thread
 
     private Queue<String> instructions;
     private boolean runWhile;
-    private ServerMain server;
-    private String chatroom;
+    protected ServerMain server;
+    protected String chatroom;
     protected String startupMessage;
     protected String endMessage;
 

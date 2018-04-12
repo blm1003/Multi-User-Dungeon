@@ -170,6 +170,11 @@ public class ServerMain
         return chatrooms.get(room);
     }
 
+    public void kickUser (String username, String chatroom)
+    {
+        users.get(username).printMessage("+|+YOU HAVE BEEN KICKED");
+    }
+
     /**
      * Removes the user from the
      * collection of online users, and
@@ -180,7 +185,12 @@ public class ServerMain
      */
     public void disconnectUser (String username, String chatroom)
     {
+        users.get(username).closeStreams();
         users.remove(username);
+        this.getRoom(chatroom).post(ServerMessages.
+                formatSendMessageToUser(
+                        "User " + username + " has left the room.",
+                        "Server", "All"));
         this.getRoom(chatroom).removeUser(username);
         if (this.getRoom(chatroom).isEmpty())
         {
