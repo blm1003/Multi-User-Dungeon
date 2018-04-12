@@ -92,6 +92,7 @@ public class UserInterface extends Application
             @Override
             public void handle(WindowEvent event) {
                 client.disconnect();
+                System.exit(0);
             }
         });
 

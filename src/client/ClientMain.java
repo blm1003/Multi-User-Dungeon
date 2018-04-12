@@ -33,7 +33,7 @@ public class ClientMain
         try
         {
             this.serverInfo = new Socket(
-                    "129.21.156.224", Constants.SERVER_PORT);
+                    "localhost", Constants.SERVER_PORT);
             new ClientIn(serverInfo, this, consoleWriter).start();
             new ClientOut(serverInfo, this).start();
         }
@@ -62,6 +62,14 @@ public class ClientMain
     public void disconnect ()
     {
         this.isActive = false;
+        try
+        {
+            this.serverInfo.close();
+        }
+        catch (IOException ioe)
+        {
+            System.out.println("Failure to close.");
+        }
     }
 
     /**
